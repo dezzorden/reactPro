@@ -1,12 +1,14 @@
 import React from 'react';
+import cn from 'classnames';
 
-const App = () =>{
+import s from './App.modules.scss';
 
-    return (
-        <div>
-            hello world
-        </div>
-    )
+const App = () => {
+  return (
+    <div className={s.header}>
+      This is App Component!
+    </div>
+  )
 }
 
 export default App;
