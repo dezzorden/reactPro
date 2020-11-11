@@ -1,12 +1,49 @@
 import React from 'react';
 import s from './Header.module.scss';
 import cn from 'classnames';
+import Layout from "../Layout";
+import {A} from 'hookrouter';
 
+interface IMenu {
+    id:number;
+    name:string;
+    link:string;
+
+}
+const Menu: IMenu[] = [
+    {
+        id:1,
+        name:'home',
+        link:'/'
+    },
+    {
+        id:2,
+        name:'Pokédex',
+        link:'/pokedex'
+    },
+    {
+        id:3,
+        name:'Legendaries',
+        link:'/legendaries'
+    },
+    {
+        id:4,
+        name:'Documentation',
+        link:'/documentation'
+    },
+
+
+
+]
 const Header = () => {
+
+
+
+
     return (
 
         <div className={cn(s.containerFluid,s.shadow)}>
-            <div className={cn(s.container,s.h100,'d-flex','align-items-center','justify-content-between')}>
+            <Layout className={cn(s.container,s.h100,'d-flex','align-items-center','justify-content-between')}>
                 <div>
                     <svg width="158" height="63" viewBox="0 0 158 63" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M82.9613 52.7803V37.2688L66.2294 30.2838L75.0112 21.0924L63.5019 10.0898L60.2378 16.8244L60.363 10.35L45.7773 15.3695L46.1529 23.8094L48.6301 23.1157L51.2056 52.8959L61.4898 51.2677L61.4719 41.3249L82.9613 52.7803Z" fill="#0B0000"/>
@@ -38,20 +75,21 @@ const Header = () => {
 
                 </div>
                 <ul className={s.nav}>
-                    <li>
-                        <a className={cn(s.navItem,s.active)} href="#">Home</a>
-                    </li>
-                    <li>
-                        <a className={s.navItem} href="#">Pokédex</a>
-                    </li>
-                    <li>
-                        <a className={s.navItem} href="#">Legendaries</a>
-                    </li>
-                    <li>
-                        <a className={s.navItem} href="#" >Documentation</a>
-                    </li>
+                {
+                    Menu.map(({name,link,id})=>(
+                        <li>
+                        <A
+                            href={link}
+                            key={id}
+                            className={cn(s.navItem,{[s.active] : id === 1,})}
+                        >
+                            {name}
+                        </A>
+                        </li>
+                    ))
+                }
                 </ul>
-            </div>
+            </Layout>
         </div>
         );
 }

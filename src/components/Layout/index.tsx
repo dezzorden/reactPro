@@ -3,14 +3,12 @@ import cn from 'classnames';
 
 import s from './Layout.module.scss';
 
-interface ButtonProps {
+interface LayoutProps {
     className?: string;
 }
 
-const Layout: React.FC<ButtonProps> = ({ children, className = null }) => (
-    <button className={cn(s.root, className)}>
-        {children}
-    </button>
+const Layout: React.FC<LayoutProps> = ({ children, className = null }) => (
+    <div className={cn(s.root, className)}>{children}</div>
 );
 
 export default Layout;

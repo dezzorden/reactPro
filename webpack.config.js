@@ -66,6 +66,7 @@ module.exports = {
     }),
   ],
   devServer: {
+    historyApiFallback:true,
     port: 3000,
     open: true,
     hot: true,
