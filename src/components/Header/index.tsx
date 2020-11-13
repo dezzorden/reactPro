@@ -2,41 +2,11 @@ import React from 'react';
 import s from './Header.module.scss';
 import cn from 'classnames';
 import Layout from "../Layout";
-import {A} from 'hookrouter';
+import {A, usePath} from 'hookrouter';
+import {GENERAL_MENU} from '../../routes'
 
-interface IMenu {
-    id:number;
-    name:string;
-    link:string;
-
-}
-const Menu: IMenu[] = [
-    {
-        id:1,
-        name:'home',
-        link:'/'
-    },
-    {
-        id:2,
-        name:'Pokédex',
-        link:'/pokedex'
-    },
-    {
-        id:3,
-        name:'Legendaries',
-        link:'/legendaries'
-    },
-    {
-        id:4,
-        name:'Documentation',
-        link:'/documentation'
-    },
-
-
-
-]
 const Header = () => {
-
+const  path = usePath();
 
 
 
@@ -76,12 +46,12 @@ const Header = () => {
                 </div>
                 <ul className={s.nav}>
                 {
-                    Menu.map(({name,link,id})=>(
+                    GENERAL_MENU.map(({name,link})=>(
                         <li>
                         <A
                             href={link}
-                            key={id}
-                            className={cn(s.navItem,{[s.active] : id === 1,})}
+                            key={name}
+                            className={cn(s.navItem,{[s.active] : link === path,})}
                         >
                             {name}
                         </A>
