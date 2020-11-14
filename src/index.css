@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
 body {
+  font-family: 'Karla', sans-serif;
   min-height: 100vh;
   background: linear-gradient(180deg, #f5d813 0%, #f2b807 100%);
   margin: 0;

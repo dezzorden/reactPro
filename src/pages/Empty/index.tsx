@@ -1,12 +1,15 @@
 import React from 'react';
 import Header from "../../components/Header";
 
-const EmptyPage = () =>{
+interface EmptyPageProps {
+    title?:string
+}
+const EmptyPage:React.FC<EmptyPageProps> = ({title}) =>{
     return (
         <>
             <Header/>
             <div>
-                Пустая страница
+                Пустая страница для {title}
             </div>
         </>
     );
