@@ -9,7 +9,7 @@ const Header = () => {
 const  path = usePath();
 
 
-
+console.log('####: Header')
     return (
 
         <div className={cn(s.containerFluid,s.shadow)}>

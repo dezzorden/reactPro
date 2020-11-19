@@ -2,15 +2,15 @@ import React from 'react';
 import cn from 'classnames';
 
 import s from './Button.module.scss';
-
 interface ButtonProps {
     className?: string;
+    onClick?:()=>void;
 }
 
-const Button: React.FC<ButtonProps> = ({ children, className = null }) => (
-    <button className={cn(s.root, className)}>
+const Button: React.FC<ButtonProps> = ({ children, className = null ,onClick}) => (
+    <Button onClick={onClick} className={cn(s.root, className)}>
         {children}
-    </button>
+    </Button>
 );
 
 export default Button;
