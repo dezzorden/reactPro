@@ -1,34 +1,43 @@
 import React from "react";
 import HomePage from "./pages/Home";
 import EmptyPage from "./pages/Empty";
+import PokedexPage from "./pages/Pokedex";
 
 interface IGeneralMenu {
     name:string,
-    link:string,
+    link:LinkEnum,
     component: ()=>JSX.Element
+
+}
+
+export enum LinkEnum{
+    HOME='/',
+    POKEDEX='/pokedex',
+    LEGENDARIES='/legendaries',
+    DOCUMENTATION='/documentation',
 
 }
 export  const GENERAL_MENU:IGeneralMenu[] = [
     {
 
         name:'home',
-        link:'/',
+        link:LinkEnum.HOME,
         component: ()=><HomePage/>
     },
     {
         name:'Pokédex',
-        link:'/pokedex',
-        component: ()=><EmptyPage title="Pokédex" />
+        link:LinkEnum.POKEDEX,
+        component: ()=><PokedexPage />
 
     },
     {
         name:'Legendaries',
-        link:'/legendaries',
+        link:LinkEnum.LEGENDARIES,
         component: ()=><EmptyPage title="Legendaries" />
     },
     {
         name:'Documentation',
-        link:'/documentation',
+        link:LinkEnum.DOCUMENTATION,
         component: ()=><EmptyPage title="Documentation" />
     },
 
