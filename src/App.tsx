@@ -5,6 +5,7 @@ import NotFoundPage from "./pages/NotFound";
 import Header from "./components/Header";
 
 const App = () => {
+
     const routeResult = useRoutes(routes);
 
     return routeResult ? (

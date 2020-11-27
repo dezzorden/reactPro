@@ -20,14 +20,14 @@ export enum LinkEnum{
 export  const GENERAL_MENU:IGeneralMenu[] = [
     {
 
-        name:'home',
+        name:'Home',
         link:LinkEnum.HOME,
         component: ()=><HomePage/>
     },
     {
         name:'Pokédex',
         link:LinkEnum.POKEDEX,
-        component: ()=><PokedexPage />
+        component: ()=><PokedexPage/>
 
     },
     {
