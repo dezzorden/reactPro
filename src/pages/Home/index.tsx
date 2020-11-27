@@ -10,7 +10,7 @@ const HomePage = () =>{
         <>
             <Parallax></Parallax>
             <Footer></Footer>
-            <Button onClick={()=>navigate(LinkEnum.POKEDEX)}>See Pockemons</Button>
+            {/*<Button onClick={() => navigate(LinkEnum.POKEDEX)}>See Pockemons</Button>*/}
         </>
     );
 };
